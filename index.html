@@ -18,11 +18,21 @@
 
                 table {
                         width: 80%;
-                        border: 1px solid gray;
+                        border: 1px solid #ccc;
                 }
 
                 th {
-                        background: #cccccc;
+                        background: #ccc;
+                }
+
+                .osicon {
+                        display: inline-block;
+                        background: #ccc;
+                        border: 1px solid #fff;
+                        padding: 1px;
+                        height: 34px;
+                        width: 34px;
+                        overflow: hidden;
                 }
 
                 #konami {
@@ -99,6 +109,10 @@
         <h2>Download HGD!</h2>
 
         <ul>
+                <li>
+                        <div class="osicon"><a href="http://aur.archlinux.org/packages.php?ID=53684"><img alt="Archlinux PKGBUILD" src="img/arch.png"/></a></div> 
+                        <div class="osicon"><a href="http://www.openbsd.org/cgi-bin/cvsweb/ports/audio/hgd/"><img alt="OpenBSD port" src="img/openbsd.png"/></a></div>
+                </li>
                 <li>Latest release: <a href="https://github.com/downloads/vext01/hgd/hgd-0.5.0.tar.gz">hgd-0.5.0.tar.gz</a></li>
                 <li><a href="https://github.com/vext01/hgd/downloads">Other releases</a></li>
         </ul>
