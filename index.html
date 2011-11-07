@@ -27,12 +27,12 @@
 
                 .osicon {
                         display: inline-block;
-                        background: #ccc;
-                        border: 1px solid #fff;
+                        border: 1px solid blue;
                         padding: 1px;
                         height: 34px;
-                        width: 34px;
-                        overflow: hidden;
+                        width: 100px;
+			text-align: center;
+                        /* overflow: hidden; */
                 }
 
                 #konami {
@@ -108,11 +108,38 @@
 
         <h2>Download HGD!</h2>
 
+	There are a couple of ways to get up and running with HGD:
+
+	<h3>Using a Package Manager</h3>
+
+	<p>
+	This is probably the easiest way to install HGD:
+	</p>
+
+	<div>
+		<div class="osicon">
+			<a href="http://aur.archlinux.org/packages.php?ID=53684">
+				<img alt="Archlinux PKGBUILD" src="img/arch.png" />
+				<br />Arch Linux
+			</a>
+		</div> 
+
+		<div class="osicon">
+			<a href="http://www.openbsd.org/cgi-bin/cvsweb/ports/audio/hgd/">
+				<img alt="OpenBSD port" src="img/openbsd.png" />
+				<br />OpenBSD
+			</a>
+		</div>
+	</div>
+
+	<p>
+	If you have the know-how to package for a different UNIX/Linux distribution, please get in touch.
+	</p>
+
+	<h3>Source Code</h3>
+
+	If there is no package for your platform, then you will have to build from source:
         <ul>
-                <li>
-                        <div class="osicon"><a href="http://aur.archlinux.org/packages.php?ID=53684"><img alt="Archlinux PKGBUILD" src="img/arch.png"/></a></div> 
-                        <div class="osicon"><a href="http://www.openbsd.org/cgi-bin/cvsweb/ports/audio/hgd/"><img alt="OpenBSD port" src="img/openbsd.png"/></a></div>
-                </li>
                 <li>Latest release: <a href="https://github.com/downloads/vext01/hgd/hgd-0.5.0.tar.gz">hgd-0.5.0.tar.gz</a></li>
                 <li><a href="https://github.com/vext01/hgd/downloads">Other releases</a></li>
         </ul>
