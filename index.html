@@ -5,136 +5,175 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<title>HGD :: The Opensource Multi-User Jukebox</title>
+        <title>HGD :: The Opensource Multi-User Jukebox</title>
 
-<style type="text/css">
-	body {
-		font-family: sans-serif;
-	}
+        <style type="text/css">
+                body {
+                        font-family: sans-serif;
+                }
 
-	.melon {
-		float: right;
-	}
+                .melon {
+                        float: right;
+                }
 
-	table {
-		width: 80%;
-		border: 1px solid gray;
-	}
+                table {
+                        width: 80%;
+                        border: 1px solid #ccc;
+                }
 
-	th {
-		background: #cccccc;
-	}
+                th {
+                        background: #ccc;
+                }
 
-	#konami {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		margin-top: -177px;
-		margin-left: -212px;	
-	}
+                .osicon {
+                        display: inline-block;
+                        border: 1px solid blue;
+                        padding: 1px;
+                        height: 34px;
+                        width: 100px;
+			text-align: center;
+                }
 
-</style>
+                .osicon img {
+                        padding-bottom: 3px;
+                }
 
-<script type="text/javascript" src="http://konami-js.googlecode.com/svn/trunk/konami.js"></script>
-<script type="text/javascript">
-// <![CDATA[
-	konami = new Konami()
-		konami.code = function() {
-        		document.getElementById("konami").innerHTML = '<object width="425" height="355">\
-        		  <param name="movie"\
-        		           value="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"><\/param>\
-        		             <param name="allowScriptAccess" value="always"></param>\
-        		               <embed src="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"\
-        		                        type="application/x-shockwave-flash"\
-        		                                 allowscriptaccess="always"\
-        		                                          width="425" height="355"></embed>\
-        		                                          </object>';
-		}
+                #konami {
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -177px;
+                        margin-left: -212px;	
+                }
 
-	konami.load()
-// ]]>
-</script>
+        </style>
 
+        <script type="text/javascript" src="http://konami-js.googlecode.com/svn/trunk/konami.js"></script>
+        <script type="text/javascript">
+                konami = new Konami()
+                        konami.code = function() {
+                                document.getElementById("konami").innerHTML = '<object width="425" height="355">\
+                                        <param name="movie"\
+                                        value="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"></param>\
+                                        <param name="allowScriptAccess" value="always"></param>\
+                                        <embed src="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"\
+                                        type="application/x-shockwave-flash"\
+                                        allowscriptaccess="always"\
+                                        width="425" height="355"></embed>\
+                                        </object>';
+                        }
+
+                konami.load()
+        </script>
 </head>
 <body>
-	<div id="konami"></div>
-	<h1>
-		<img src="img/hgd-logo.png" alt="HGD" align="middle" />
-		&nbsp;&nbsp;The Opensource Multi-User Jukebox
-	</h1>
+        <div id="konami"></div>
+        <h1>
+                <img src="img/hgd-logo.png" alt="HGD" align="middle" />
+                &nbsp;&nbsp;The Opensource Multi-User Jukebox
+        </h1>
 
-	<hr />
-	<h2>What is HGD?</h2>
+        <hr />
+        
+        <h2>What is HGD?</h2>
+
+        <p>HGD (<a href="http://en.wikipedia.org/wiki/Hackathon">Hackathon</a> <a href="http://www.gunthernet.com/">Gunther</a> <a href="http://en.wikipedia.org/wiki/Daemon_%28computing%29">Daemon</a>) is a multi user jukebox suitible for <a href="http://en.wikipedia.org/wiki/Hackathon">hackathons</a>, internet cafes, <a href="http://en.wikipedia.org/wiki/Hackerspace">hackspaces</a> etc.</p>
+        
+        <p>The idea is that there is a central server connected to a set of speakers. Clients have user accounts on the server and may queue tracks from their own machines. This differs from the approach of <a href="http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki">MPD</a> (for example), where there is a single centralised music library. </p>
+
+        <p>The concept was inspired by the <a href="http://canthack.org/2010/11/lpd-music-hack-how-its-done/">LPD hack</a> used at <a href="http://www.openbsd.org/hackathons.html">OpenBSD hackathons</a>.</p>
+
+        <h2>Features</h2>
+
+        <ul>
+                <li>Plays anything <a href="http://www.mplayerhq.hu">MPlayer</a> does (including video).</li>
+                <li>Supports multiple user accounts.</li>
+                <li>Special "admin users" can pause, skip tracks etc.</li>
+                <li>Supports SSL encryption.</li>
+                <li>Written in portable C.</li>
+                <li>Released under a liberal ISC opensource license.</li>
+                <li>Simple and well documented network protocol</li>
+        </ul>
+
+        <h2>Development</h2>
+
+        <p>Development and bug tracking happens over at <a href="https://github.com/vext01/hgd">GitHub</a></p>
+
+        <h2>Screenshots</h2>
+
+        <p>These images show the official client (hgdc) in action:</p>
+
+        <ul>
+                <li><a href="img/hgdimg-ls.png">The playlist</a></li>
+                <li><a href="img/hgdimg-q.png">Queueing a track</a></li>
+        </ul>
+
+        <h2>Download HGD!</h2>
+
+	There are a couple of ways to get up and running with HGD:
+
+	<h3>Using a Package Manager</h3>
 
 	<p>
-	HGD (<a href="http://en.wikipedia.org/wiki/Hackathon">Hackathon</a> <a href="http://www.gunthernet.com/">Gunther</a> <a href="http://en.wikipedia.org/wiki/Daemon_%28computing%29">Daemon</a>) is a multi user jukebox suitible for <a href="http://en.wikipedia.org/wiki/Hackathon">hackathons</a>, internet cafes, <a href="http://en.wikipedia.org/wiki/Hackerspace">hackspaces</a> etc.
-	</p>
-	<p>
-	The idea is that there is a central server connected to a set of speakers. Clients have user accounts on the server and may queue tracks from their own machines. This differs from the approach of <a href="http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki">MPD</a> (for example), where there is a single centralised music library.
+	This is probably the easiest way to install HGD:
 	</p>
 
-	<p>
-	The concept was inspired by the <a href="http://canthack.org/2010/11/lpd-music-hack-how-its-done/">LPD hack</a> used at <a href="http://www.openbsd.org/hackathons.html">OpenBSD hackathons</a>.
-	</p>
+	<div>
+		<div class="osicon">
+			<a href="http://aur.archlinux.org/packages.php?ID=53684">
+				<img alt="Archlinux PKGBUILD" src="img/arch.png" />
+				<br />Arch Linux
+			</a>
+		</div> 
 
-	<h2>Features</h2>
-
-	<ul>
-	<li>Plays anything <a href="http://www.mplayerhq.hu">MPlayer</a> does (including video).</li>
-	<li>Supports multiple user accounts.</li>
-	<li>Special "admin users" can pause, skip tracks etc.</li>
-	<li>Supports SSL encryption.</li>
-	<li>Written in portable C.</li>
-	<li>Released under a liberal ISC opensource license.</li>
-	<li>Simple and well documented network protocol</li>
-	</ul>
-	<h2>Development</h2>
-	Development and bug tracking happens over at <a href="https://github.com/vext01/hgd">GitHub</a>
-
-	<h2>Screenshots</h2>
-
-	These images show the official client (hgdc) in action:
-
-	<ul>
-		<li><a href="img/hgdimg-ls.png">The playlist</a></li>
-		<li><a href="img/hgdimg-q.png">Queueing a track</a></li>
-	</ul>
-
-	<h2>Download HGD!</h2>
-
-	<ul>
-		<li>Latest release: <a href="https://github.com/downloads/vext01/hgd/hgd-0.5.0.tar.gz">hgd-0.5.0.tar.gz</a></li>
-		<li><a href="https://github.com/vext01/hgd/downloads">Other releases</a></li>
-	</ul>
-
-	<div class="melon">
-	<img alt="melona" src="img/melon.png" width="200px" align="top" />
+		<div class="osicon">
+			<a href="http://www.openbsd.org/cgi-bin/cvsweb/ports/audio/hgd/">
+				<img alt="OpenBSD port" src="img/openbsd.png" />
+				<br />OpenBSD
+			</a>
+		</div>
 	</div>
 
-	<h2>Clients</h2>
-
-	<p>Here at HGD, we encourage development of clients. The following table details the ones we know about:</p>
-
-	<table>
-		<tr><th>Name</th><th>Nature</th><th>Status</th></tr>
-		<tr><td>hgdc</td><td>Official client written in C (included in hgd sources)</td><td>Complete</td></tr>
-		<tr><td><a href="https://github.com/tristan2468/hgdc-x">hgdc-x</a></td><td>Cross platform GUI client written in Lazarus</td><td>Complete</td></tr>
-		<tr><td><a href="https://github.com/kaduardo/jhgdc">jhgdc</a></td><td>Java library for talking to HGD</td><td>Incomplete</td></tr>
-		<tr><td><a href="https://github.com/vext01/gunthirssi">gunthirssi</a></td><td>Irssi plugin</td><td>Vastly incomplete</td></tr>
-	</table>
-
-	<p>If you know a thing or two about irssi plugins, please mail us with regards to gunthirssi.</p>
-	<p>An ncurses client is planned in the future.</p>
-
-	<hr />
-
-	<p>Sources for this webpage are available on github <a href="https://github.com/vext01/hgd-www">here</a>. Please feel free to send pull requests to fix bugs.</p>
-
 	<p>
-	<a href="http://validator.w3.org/check?uri=referer">
-		<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
-	<a href="http://www.vim.org"><img src="http://www.vim.org/images/just_vim_it_animated_powered.gif" alt="vim" /></a>
+	If you have the know-how to package for a different UNIX/Linux distribution, please get in touch.
 	</p>
+
+	<h3>Source Code</h3>
+
+	If there is no package for your platform, then you will have to build from source:
+        <ul>
+                <li>Latest release: <a href="https://github.com/downloads/vext01/hgd/hgd-0.5.0.tar.gz">hgd-0.5.0.tar.gz</a></li>
+                <li><a href="https://github.com/vext01/hgd/downloads">Other releases</a></li>
+        </ul>
+
+        <div class="melon">
+                <img alt="melona" src="img/melon.png" width="200px" align="top" />
+        </div>
+
+        <h2>Clients</h2>
+
+        <p>Here at HGD, we encourage development of clients. The following table details the ones we know about:</p>
+
+        <table>
+                <tr><th>Name</th><th>Nature</th><th>Status</th></tr>
+                <tr><td>hgdc</td><td>Official client written in C (included in hgd sources)</td><td>Complete</td></tr>
+                <tr><td><a href="https://github.com/tristan2468/hgdc-x">hgdc-x</a></td><td>Cross platform GUI client written in Lazarus</td><td>Complete</td></tr>
+                <tr><td><a href="https://github.com/kaduardo/jhgdc">jhgdc</a></td><td>Java library for talking to HGD</td><td>Incomplete</td></tr>
+                <tr><td><a href="https://github.com/vext01/gunthirssi">gunthirssi</a></td><td>Irssi plugin</td><td>Vastly incomplete</td></tr>
+        </table>
+
+        <p>If you know a thing or two about irssi plugins, please mail us with regards to gunthirssi.</p>
+        <p>An ncurses client is planned in the future.</p>
+
+        <hr />
+
+        <p>Sources for this webpage are available on github <a href="https://github.com/vext01/hgd-www">here</a>. Please feel free to send pull requests to fix bugs.</p>
+
+        <p>
+                <a href="http://validator.w3.org/check?uri=referer">
+                        <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+                <a href="http://www.vim.org"><img src="http://www.vim.org/images/just_vim_it_animated_powered.gif" alt="vim" /></a>
+        </p>
 
 </body>
 
