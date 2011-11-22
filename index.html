@@ -50,11 +50,12 @@
 
         <script type="text/javascript" src="http://konami-js.googlecode.com/svn/trunk/konami.js"></script>
         <script type="text/javascript">
+	// <![CDATA[
                 konami = new Konami()
                         konami.code = function() {
                                 document.getElementById("konami").innerHTML = '<object width="425" height="355">\
                                         <param name="movie"\
-                                        value="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"></param>\
+                                        value="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"><\/param>\
                                         <param name="allowScriptAccess" value="always"></param>\
                                         <embed src="http://www.youtube.com/v/f1D0eEjwQKs?version=3&autohide=1&autoplay=1&showinfo=0"\
                                         type="application/x-shockwave-flash"\
@@ -64,6 +65,7 @@
                         }
 
                 konami.load()
+	// ]]>
         </script>
 </head>
 <body>
